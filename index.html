@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Daily-Saily</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%236c5ce7' d='M5 35 Q25 20 50 35 T95 35 V45 Q75 30 50 45 T5 45 Z M5 55 Q25 40 50 55 T95 55 V65 Q75 50 50 65 T5 65 Z M5 75 Q25 60 50 75 T95 75 V85 Q75 70 50 85 T5 85 Z'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            --brand-purple: #6c5ce7;
+            --brand-purple-soft: rgba(108, 92, 231, 0.12);
+            --brand-blue: #b8d4e8;
+            --brand-blue-soft: #e8f0f8;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #4a4a5e;
+            --text-muted: #888;
+            --border: #eef0f5;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background ornaments — soft blue blob waves like in the app */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.55;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #b8d4e8 0%, transparent 70%);
+            top: -200px;
+            right: -150px;
+        }
+
+        body::after {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #d4d0f5 0%, transparent 70%);
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Decorative wave svg overlay */
+        .wave-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 380px;
+            height: 380px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wave-decoration-2 {
+            position: absolute;
+            top: 320px;
+            left: -80px;
+            width: 280px;
+            height: 280px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+            transform: rotate(180deg);
+        }
+
+        /* Header */
+        header {
+            padding: 56px 0 32px;
+            position: relative;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6c5ce7 0%, #8b7ff5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.25);
+        }
+
+        .logo-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 800;
+            margin: 0 0 12px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text);
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 48px 0 16px;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 4px;
+            background: var(--brand-purple);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text);
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--brand-purple);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.25);
+            transition: border-color 0.15s ease;
+        }
+
+        a:hover {
+            border-bottom-color: var(--brand-purple);
+        }
+
+        .meta {
+            display: inline-block;
+            color: var(--text-muted);
+            font-size: 13px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 6px 14px;
+            margin-bottom: 32px;
+        }
+
+        .intro {
+            font-size: 17px;
+            color: var(--text-secondary);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--brand-purple);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 32px 0 48px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .data-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .data-card strong {
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .data-card-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--brand-purple);
+            background: var(--brand-purple-soft);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        code {
+            background: var(--brand-purple-soft);
+            color: var(--brand-purple);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "SF Mono", Monaco, Consolas, monospace;
+        }
+
+        section.do-not-collect {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        section.do-not-collect h3 {
+            margin-top: 0;
+            color: var(--text);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 32px 0 60px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        footer .footer-logo svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 34px; }
+            h2 { font-size: 20px; margin-top: 36px; }
+            body::before, body::after { display: none; }
+            .wave-decoration, .wave-decoration-2 { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Decorative SVG waves — same vibe as the app ornaments -->
+<svg class="wave-decoration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 200 Q 100 100, 200 200 T 400 200 L 400 400 L 0 400 Z" fill="#cfe0ef" opacity="0.55"/>
+    <path d="M 0 250 Q 100 180, 200 250 T 400 250 L 400 400 L 0 400 Z" fill="#e8e4f7" opacity="0.5"/>
+</svg>
+
+<svg class="wave-decoration-2" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 150 Q 75 80, 150 150 T 300 150 L 300 300 L 0 300 Z" fill="#cfe0ef" opacity="0.45"/>
+</svg>
+
+<div class="container">
+
+<header>
+    <div class="logo">
+        <div class="logo-mark">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 10 Q 8 6, 13 10 T 23 10 T 29 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M3 16 Q 8 12, 13 16 T 23 16 T 29 16" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M3 22 Q 8 18, 13 22 T 23 22 T 29 22" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+        </div>
+        <span class="logo-name">Daily-Saily</span>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <span class="meta">Effective May 15, 2026 · Last updated May 15, 2026</span>
+
+    <p class="intro">
+        Daily-Saily is built to help you organize your day calmly — tasks, money, and activity in one place.
+        We treat your data the way we'd want ours treated: collect only what's needed, store it securely,
+        never sell it to anyone, and let you delete it whenever you want.
+    </p>
+</header>
+
+<main>
+
+<h2>1. Who we are</h2>
+<p>
+    Daily-Saily (the "App") is developed and operated by Alex Shtokhov ("we", "us", or "the developer"),
+    an independent developer. This Privacy Policy explains what personal data we collect when you use
+    the App, why we collect it, and what your rights are.
+</p>
+<p>
+    Questions? Reach us at
+    <a href="mailto:alexeyshtokhov29@gmail.com">alexeyshtokhov29@gmail.com</a>.
+</p>
+
+<h2>2. What data we collect</h2>
+<p>The App collects the following categories of data, all of which are necessary for it to function:</p>
+
+<div class="data-card">
+    <span class="data-card-tag">Contact</span>
+    <strong>Account information</strong>
+    Your name (if you provide one) and email address. Used to create and secure your account.
+</div>
+
+<div class="data-card">
+    <span class="data-card-tag">Identifier</span>
+    <strong>User identifier</strong>
+    An internal account ID we generate when you sign up. Used to associate your tasks, lists, and balances with your account across devices.
+</div>
+
+<div class="data-card">
+    <span class="data-card-tag">Content</span>
+    <strong>User content</strong>
+    Tasks, checklists, notes, categories, and other content you create inside the App. Stored so you can access them from any of your devices.
+</div>
+
+<div class="data-card">
+    <span class="data-card-tag">Financial</span>
+    <strong>Financial information</strong>
+    Balances, accounts, transactions (income, expenses, transfers), categories, and currencies you enter manually. We never have access to your bank accounts or payment cards — only the data you choose to type in.
+</div>
+
+<div class="data-card">
+    <span class="data-card-tag">Fitness</span>
+    <strong>Fitness data</strong>
+    Steps, distance, workouts, and active calories. If you grant permission, the App reads this data from Apple Health on your device. Fitness data is used to display your daily activity widget and is stored on our servers only if you enable cross-device sync.
+</div>
+
+<section class="do-not-collect">
+    <h3>What we do NOT collect</h3>
+    <ul>
+        <li>Location data (precise or approximate)</li>
+        <li>Contacts from your address book</li>
+        <li>Photos, audio, or videos</li>
+        <li>Browsing or search history outside the App</li>
+        <li>Device advertising identifiers (IDFA)</li>
+        <li>Medical or clinical health records</li>
+        <li>Sensitive personal data (race, religion, political opinion, biometrics, etc.)</li>
+        <li>Payment card numbers or bank account numbers</li>
+    </ul>
+</section>
+
+<h2>3. How we use your data</h2>
+<p>
+    All data we collect is used solely to provide the core functionality of the App. Specifically:
+</p>
+<ul>
+    <li>To authenticate you and keep your account secure</li>
+    <li>To sync your tasks, lists, and balances between your devices</li>
+    <li>To show your daily activity, financial overview, and planned tasks</li>
+    <li>To send you reminders and notifications you've configured</li>
+    <li>To respond to support requests, if you contact us</li>
+</ul>
+<p>
+    <strong>We do not use your data for advertising, profiling, or any form of cross-app tracking.</strong>
+    We do not sell, rent, or share your personal data with third parties for their marketing purposes.
+</p>
+
+<h2>4. How your data is stored and protected</h2>
+<p>
+    Your data is stored on encrypted servers hosted by
+    <a href="https://railway.app/" target="_blank" rel="noopener">Railway</a>,
+    a managed cloud infrastructure provider. All connections between the App and our servers use
+    HTTPS with TLS encryption.
+</p>
+<p>
+    Passwords are never stored in plain text — they are hashed using industry-standard algorithms
+    before being saved. Authentication tokens are stored securely on your device and rotated regularly.
+</p>
+<p>
+    Apple Health data accessed via HealthKit remains on your device unless you explicitly enable
+    cross-device sync; in that case only the specific metrics needed (e.g. step counts, workout summaries)
+    are transmitted to our servers, never raw health sensor data.
+</p>
+
+<h2>5. Third-party services we use</h2>
+<p>The App relies on a small number of third-party services to function:</p>
+<ul>
+    <li><strong>Railway</strong> — server hosting and database infrastructure.
+        See <a href="https://railway.app/legal/privacy" target="_blank" rel="noopener">Railway's Privacy Policy</a>.</li>
+    <li><strong>Apple HealthKit</strong> — to read fitness metrics you authorize. Apple handles this data
+        according to its own privacy policy and we cannot access HealthKit data without your permission.</li>
+    <li><strong>Apple Push Notification Service</strong> — to deliver notifications you've configured.</li>
+</ul>
+<p>
+    We do not use third-party analytics platforms (no Mixpanel, no Amplitude, no Google Analytics),
+    advertising SDKs, or social-media tracking pixels.
+</p>
+
+<h2>6. Data retention</h2>
+<p>
+    We retain your data for as long as your account is active. If you delete your account, all
+    personal data associated with it — tasks, lists, transactions, fitness data, and account details —
+    is permanently deleted from our servers within 30 days. Backups containing your data are
+    rotated and overwritten within 90 days.
+</p>
+
+<h2>7. Your rights</h2>
+<p>You have the right to:</p>
+<ul>
+    <li><strong>Access</strong> — request a copy of the personal data we have about you.</li>
+    <li><strong>Correct</strong> — update or correct any inaccurate data.</li>
+    <li><strong>Delete</strong> — delete your account and all associated data at any time.</li>
+    <li><strong>Export</strong> — receive a copy of your data in a portable format.</li>
+    <li><strong>Withdraw consent</strong> — revoke permissions (e.g. HealthKit access) at any time
+        from your device settings.</li>
+</ul>
+<p>
+    You can delete your account directly from the App's Settings, or by emailing
+    <a href="mailto:alexeyshtokhov29@gmail.com">alexeyshtokhov29@gmail.com</a> with the subject line
+    <code>Account deletion request</code>. We respond to all requests within 30 days.
+</p>
+
+<h2>8. Children's privacy</h2>
+<p>
+    Daily-Saily is not directed at children under 13. We do not knowingly collect personal data
+    from children under 13. If you believe a child has provided us with personal information,
+    please contact us at <a href="mailto:alexeyshtokhov29@gmail.com">alexeyshtokhov29@gmail.com</a> and
+    we will delete it promptly.
+</p>
+
+<h2>9. International data transfers</h2>
+<p>
+    Our servers are located in the regions provided by Railway, which may include the United States
+    and the European Union. By using the App, you understand that your data may be transferred to,
+    stored in, and processed in countries other than your country of residence.
+</p>
+
+<h2>10. Changes to this policy</h2>
+<p>
+    We may update this Privacy Policy from time to time. When we make material changes, we'll notify
+    you through the App and update the "Last updated" date at the top of this page. Continued use
+    of the App after changes are posted means you accept the updated policy.
+</p>
+
+<h2>11. Contact</h2>
+<p>
+    Questions, concerns, or requests? Email us at
+    <a href="mailto:alexeyshtokhov29@gmail.com">alexeyshtokhov29@gmail.com</a>.
+    We read every message personally.
+</p>
+
+</main>
+
+<footer>
+    <div class="footer-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 10 Q 8 6, 13 10 T 23 10 T 29 10" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M3 16 Q 8 12, 13 16 T 23 16 T 29 16" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M3 22 Q 8 18, 13 22 T 23 22 T 29 22" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <strong style="color: var(--text);">Daily-Saily</strong>
+    </div>
+    <p style="margin: 0;">
+        © 2026 Alex Shtokhov. Daily-Saily is an independent product. This Privacy Policy is provided
+        in plain English and is intended to be understood without legal training. If anything is unclear,
+        please reach out.
+    </p>
+</footer>
+
+</div>
+
+</body>
+</html>
