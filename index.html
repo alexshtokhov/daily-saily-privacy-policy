@@ -328,7 +328,7 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <span class="meta">Effective May 15, 2026 · Last updated May 15, 2026</span>
+    <span class="meta">Effective May 15, 2026 · Last updated November 17, 2026</span>
 
     <p class="intro">
         Daily-Saily is built to help you organize your day calmly — tasks, money, and activity in one place.
@@ -366,6 +366,12 @@
 </div>
 
 <div class="data-card">
+    <span class="data-card-tag">Device</span>
+    <strong>Push notification token</strong>
+    If you allow notifications, a token issued by Apple and Firebase Cloud Messaging that lets us deliver notifications to your device. It is not an advertising identifier and is deleted when you sign out or delete your account.
+</div>
+
+<div class="data-card">
     <span class="data-card-tag">Content</span>
     <strong>User content</strong>
     Tasks, checklists, notes, categories, and other content you create inside the App. Stored so you can access them from any of your devices.
@@ -374,7 +380,13 @@
 <div class="data-card">
     <span class="data-card-tag">Financial</span>
     <strong>Financial information</strong>
-    Balances, accounts, transactions (income, expenses, transfers), categories, and currencies you enter manually. We never have access to your bank accounts or payment cards — only the data you choose to type in.
+    Balances, accounts, transactions (income, expenses, transfers), categories, and currencies you enter manually. If you connect the optional Bybit Card integration, we also import your card transactions from Bybit: date, amount, currency, merchant name, city, country and merchant category. We never receive full card numbers, CVV codes or the ability to move your money.
+</div>
+
+<div class="data-card">
+    <span class="data-card-tag">Credentials</span>
+    <strong>Integration keys</strong>
+    Only if you connect Bybit Card: the read-only API key and secret you create in your Bybit account. The App refuses keys that can trade, withdraw or do anything other than read card history. We store them encrypted and use them only to fetch your card transactions.
 </div>
 
 <div class="data-card">
@@ -393,7 +405,7 @@
         <li>Device advertising identifiers (IDFA)</li>
         <li>Medical or clinical health records</li>
         <li>Sensitive personal data (race, religion, political opinion, biometrics, etc.)</li>
-        <li>Payment card numbers or bank account numbers</li>
+        <li>Full payment card numbers, CVV codes or bank account numbers (imported card records carry at most the card's last four digits)</li>
     </ul>
 </section>
 
@@ -406,6 +418,7 @@
     <li>To sync your tasks, lists, and balances between your devices</li>
     <li>To show your daily activity, financial overview, and planned tasks</li>
     <li>To send you reminders and notifications you've configured</li>
+    <li>If you connect Bybit Card, to turn your card transactions into expense records and to remind you when your API key is about to expire</li>
     <li>To respond to support requests, if you contact us</li>
 </ul>
 <p>
@@ -425,6 +438,10 @@
     before being saved. Authentication tokens are stored securely on your device and rotated regularly.
 </p>
 <p>
+    Bybit API keys and secrets are encrypted with AES-256-GCM before they are saved, and are never
+    shown back to you or anyone else. Disconnecting Bybit Card in the App deletes them immediately.
+</p>
+<p>
     Apple Health data accessed via HealthKit remains on your device unless you explicitly enable
     cross-device sync; in that case only the specific metrics needed (e.g. step counts, workout summaries)
     are transmitted to our servers, never raw health sensor data.
@@ -437,7 +454,17 @@
         See <a href="https://railway.app/legal/privacy" target="_blank" rel="noopener">Railway's Privacy Policy</a>.</li>
     <li><strong>Apple HealthKit</strong> — to read fitness metrics you authorize. Apple handles this data
         according to its own privacy policy and we cannot access HealthKit data without your permission.</li>
-    <li><strong>Apple Push Notification Service</strong> — to deliver notifications you've configured.</li>
+    <li><strong>Apple Push Notification Service</strong> and
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Messaging</a>
+        (Google) — to deliver notifications you've configured. They receive your device's push token and the notification text.</li>
+    <li><strong>Sign in with Apple</strong> and <strong>Google Sign-In</strong> — only if you choose them to sign in.
+        They confirm your identity and share your name and email address with us.</li>
+    <li><strong>Resend</strong> — to send account emails such as password resets and integration notices.
+        It receives your email address and the message.
+        See <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend's Privacy Policy</a>.</li>
+    <li><strong>Bybit</strong> — only if you connect Bybit Card. Our servers request your card transaction
+        history from Bybit's API using the read-only key you provided; Bybit handles your account under its
+        own privacy policy. Daily-Saily is not affiliated with or endorsed by Bybit.</li>
 </ul>
 <p>
     We do not use third-party analytics platforms (no Mixpanel, no Amplitude, no Google Analytics),
@@ -450,6 +477,11 @@
     personal data associated with it — tasks, lists, transactions, fitness data, and account details —
     is permanently deleted from our servers within 30 days. Backups containing your data are
     rotated and overwritten within 90 days.
+</p>
+<p>
+    Disconnecting Bybit Card deletes the stored API key and secret and the raw card records at once.
+    Expenses already imported stay in your history, like any record you entered yourself, until you
+    delete them or your account.
 </p>
 
 <h2>7. Your rights</h2>
